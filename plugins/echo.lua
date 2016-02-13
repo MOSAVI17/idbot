@@ -1,11 +1,11 @@
-local command = 'echo <text>'
+local command = 'print <text>'
 local doc = [[```
-/echo <text>
+/peint <text>
 Repeats a string of text.
 ```]]
 
 local triggers = {
-	'^/echo[@'..bot.username..']*'
+	'^/print[@'..bot.username..']*'
 }
 
 local action = function(msg)
