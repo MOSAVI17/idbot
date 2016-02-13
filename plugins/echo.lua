@@ -1,7 +1,7 @@
 local command = 'print <text>'
 local doc = [[```
-/peint <text>
-Repeats a string of text.
+/perint <text>
+Enter the command along with the text.
 ```]]
 
 local triggers = {
