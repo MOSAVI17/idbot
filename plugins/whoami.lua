@@ -30,7 +30,7 @@ local action = function(msg)
 		to_name = '@' .. bot.username .. ', | | ' .. bot.first_name .. ' (' .. bot.id .. ').'
 	end
 
-	local message = 'You are ' .. from_name .. ' and you are messaging ' .. to_name
+	local message = 'Information You ' .. from_name .. ' The robot is.(@IDYoubot)'
 
 	local nicks = load_data('nicknames.json')
 	if nicks[msg.from.id_str] then
