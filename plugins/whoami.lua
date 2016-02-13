@@ -1,11 +1,11 @@
-local command = 'whoami'
+local command = 'whome'
 local doc = [[```
 Returns user and chat info for you or the replied-to message.
 Alias: /who
 ```]]
 
 local triggers = {
-	'^/who[ami]*[@'..bot.username..']*$'
+	'^/who[me]*[@'..bot.username..']*$'
 }
 
 local action = function(msg)
@@ -19,7 +19,7 @@ local action = function(msg)
 		from_name = from_name .. ' ' .. msg.from.last_name
 	end
 	if msg.from.username then
-		from_name = '@' .. msg.from.username .. ', AKA ' .. from_name
+		from_name = '@' .. msg.from.username .. ', | | ' .. from_name
 	end
 	from_name = from_name .. ' (' .. msg.from.id .. ')'
 
@@ -27,7 +27,7 @@ local action = function(msg)
 	if msg.chat.title then
 		to_name = msg.chat.title .. ' (' .. math.abs(msg.chat.id) .. ').'
 	else
-		to_name = '@' .. bot.username .. ', AKA ' .. bot.first_name .. ' (' .. bot.id .. ').'
+		to_name = '@' .. bot.username .. ', | | ' .. bot.first_name .. ' (' .. bot.id .. ').'
 	end
 
 	local message = 'You are ' .. from_name .. ' and you are messaging ' .. to_name
